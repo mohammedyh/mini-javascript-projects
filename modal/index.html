@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: "Inter, sans-serif",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Modal</title>
+  </head>
+  <body class="bg-slate-300 text-slate-800 font-inter">
+    <main class="h-screen flex justify-center items-center">
+      <button
+        class="px-4 py-2 bg-indigo-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        data-open-modal-btn
+      >
+        Open Modal
+      </button>
+
+      <div class="absolute z-10 invisible" data-modal>
+        <div
+          class="bg-white rounded-lg shadow-md mx-auto w-full md:max-w-2xl p-10"
+        >
+          <div class="flex justify-end">
+            <img
+              class="w-8 h-8 cursor-pointer"
+              src="x-icon.svg"
+              alt="Cross Icon"
+              data-cross-icon
+            />
+          </div>
+
+          <div class="mb-4">
+            <h1 class="text-3xl font-semibold">Create a post</h1>
+            <p class="mt-4 text-gray-700">
+              Share posts across multiple social channels to increase the reach
+              of your brand and track how people engage with your content
+            </p>
+          </div>
+
+          <div class="mb-6">
+            <label class="text-gray-700 block font-medium mb-2" for="post-name"
+              >Post name</label
+            >
+            <input
+              type="text"
+              id="post-name"
+              placeholder="E.g. How to create a modal"
+              class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+
+          <div class="flex gap-2">
+            <button
+              class="px-4 py-2 bg-indigo-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              Continue
+            </button>
+            <button
+              class="text-gray-700 px-4 py-2 rounded-md hover:text-indigo-600 focus:outline-none"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
